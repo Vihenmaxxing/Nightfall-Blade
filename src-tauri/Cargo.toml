@@ -1,0 +1,21 @@
+[package]
+name = "nightfall-blade"
+version = "1.0.0"
+description = "Nightfall Blade - Neon Pixel Arcade Combat"
+edition = "2021"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+
+# Keeps the shipped executable as small as Rust will reasonably go.
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+incremental = false
